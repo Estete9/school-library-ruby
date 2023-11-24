@@ -14,8 +14,12 @@ class App
     @classroom = Classroom.new
   end
 
-  def create_student(age, name, parent_permission)
-    person = Student.new(age: age, classroom: @classroom, name: name, parent_permission: parent_permission)
+  def create_student(age, name, parent_permission, classroom = @classroom)
+    Student.new(age, classroom, name: name, parent_permission: parent_permission)
+  end
+
+  def create_teacher(age, specialization, name)
+    Teacher.new(age, specialization, name: name)
   end
 
   def print_menu
