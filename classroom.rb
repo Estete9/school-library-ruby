@@ -37,4 +37,8 @@ class Classroom
   def list_of_people
     list_of_students + list_of_teachers
   end
+
+  def list_of_books
+    @books
+  end
 end

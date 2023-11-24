@@ -30,6 +30,14 @@ class App
     end
   end
 
+  def list_of_books
+    @classroom.list_of_books.each do |book_item|
+      book_title = book_item.title
+      book_author = book_item.author
+      puts "Title: \"#{book_title}\", Author: #{book_author}"
+    end
+  end
+
   def run
     # App logic here
     # App loop

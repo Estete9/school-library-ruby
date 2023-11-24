@@ -14,14 +14,12 @@ module MenuModule
   def menu_action(option)
     case option
     when '1'
-      # implement list all books
+      list_of_books
     when '2'
       list_of_people
     when '3'
-      # Create a person
       create_person
     when '4'
-      # Create a book
       create_book
     when '5'
       # create a rental
