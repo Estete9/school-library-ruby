@@ -4,12 +4,15 @@ require_relative 'classroom'
 require_relative 'person'
 require_relative 'student'
 require_relative 'teacher'
+require_relative 'book'
 require_relative 'person_addition_module'
 require_relative 'menu_module'
+require_relative 'book_addition_module'
 
 class App
   include PersonAdditionModule
   include MenuModule
+  include BookAdditionModule
 
   def initialize
     @classroom = Classroom.new
@@ -27,16 +30,12 @@ class App
     end
   end
 
-  def create_book
-
-  end
-
   def run
     # App logic here
     # App loop
     while @is_active
       print_menu
-      #user_input
+      # user_input
       user_option = gets.chomp
       # decision maker
       menu_action(user_option) unless user_option.empty?

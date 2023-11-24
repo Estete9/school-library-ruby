@@ -1,5 +1,4 @@
 module BookAdditionModule
-
   def book_info
     p 'Title:'
     title = gets.chomp
@@ -9,9 +8,9 @@ module BookAdditionModule
     [title, author]
   end
 
-  def create_book
+  def create_book(classroom = @classroom)
     title, author = book_info
-    new_book = Book.new(title: title, author: author)
+    new_book = Book.new(title, author, classroom)
     p 'Book created successfully'
     new_book
   end
