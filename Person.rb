@@ -31,7 +31,6 @@ class Person < Nameable
   def add_rental(book, date)
     rental = Rental.new(date, book, self)
     @rentals << rental
-    rental.book = self
   end
 
   private

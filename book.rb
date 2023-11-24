@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Book
   attr_accessor :title, :author, :rentals
 
@@ -10,6 +12,5 @@ class Book
   def add_rental(person, date)
     rental = Rental.new(date, self, person)
     @rentals << rental
-    rental.book = self
   end
 end
