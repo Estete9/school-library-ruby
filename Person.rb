@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'securerandom'
 require_relative 'nameable'
 require_relative 'person'
 require_relative 'base_decorator'
@@ -12,6 +13,7 @@ class Person < Nameable
 
   def initialize(age, name: 'Unknown', parent_permission: true)
     super()
+    @id = generate_id
     @name = name
     @age = age
     @parent_permission = parent_permission
@@ -39,5 +41,9 @@ class Person < Nameable
     return true if @age >= 18
 
     false
+  end
+
+  def generate_id
+    SecureRandom.uuid
   end
 end

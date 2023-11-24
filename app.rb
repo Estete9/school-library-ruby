@@ -30,7 +30,9 @@ class App
   end
 
   def list_of_people
-    puts @classroom.list_of_people
+    @classroom.list_of_people.each do |person|
+      puts "[#{person.class.name}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+    end
   end
 
   def menu_action(option)
