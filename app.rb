@@ -14,6 +14,10 @@ class App
     @classroom = Classroom.new
   end
 
+  def create_student(age, name, parent_permission)
+    person = Student.new(age: age, classroom: @classroom, name: name, parent_permission: parent_permission)
+  end
+
   def print_menu
     puts 'Welcome to School Library App!'
     puts
