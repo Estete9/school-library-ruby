@@ -54,9 +54,9 @@ class App
     new_student
   end
 
-  def create_teacher
+  def create_teacher(classroom = @classroom)
     age, name, specialization = teacher_info
-    new_teacher = Teacher.new(age, specialization, name: name)
+    new_teacher = Teacher.new(age, specialization, classroom, name: name)
     p 'Teacher created successfully'
     new_teacher
   end
@@ -79,7 +79,7 @@ class App
   end
 
   def list_of_people
-    return @classroom
+    @classroom.list_of_people
   end
 
   def menu_action(option)

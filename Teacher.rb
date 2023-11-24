@@ -7,6 +7,7 @@ class Teacher < Person
     super(age, name: name, parent_permission: parent_permission)
     @specialization = specialization
     @classroom = classroom
+    @classroom.add_teacher(self)
   end
 
   def can_use_services?
