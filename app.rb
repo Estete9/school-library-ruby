@@ -27,6 +27,10 @@ class App
     end
   end
 
+  def create_book
+
+  end
+
   def run
     # App logic here
     # App loop

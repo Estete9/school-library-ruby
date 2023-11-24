@@ -22,6 +22,7 @@ module MenuModule
       create_person
     when '4'
       # Create a book
+      create_book
     when '5'
       # create a rental
     when '6'
