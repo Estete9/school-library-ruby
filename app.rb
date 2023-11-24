@@ -78,12 +78,16 @@ class App
     end
   end
 
+  def list_of_people
+    return @classroom
+  end
+
   def menu_action(option)
     case option
     when '1'
       # implement list all books
     when '2'
-      # implement list all people
+      list_of_people
     when '3'
       # Create a person
       create_person
