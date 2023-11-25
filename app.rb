@@ -5,14 +5,17 @@ require_relative 'person'
 require_relative 'student'
 require_relative 'teacher'
 require_relative 'book'
+require_relative 'rental'
 require_relative 'person_addition_module'
 require_relative 'menu_module'
 require_relative 'book_addition_module'
+require_relative 'rental_addition_module'
 
 class App
   include PersonAdditionModule
   include MenuModule
   include BookAdditionModule
+  include RentalAdditionModule
 
   def initialize
     @classroom = Classroom.new
@@ -25,16 +28,16 @@ class App
   end
 
   def list_of_people
-    @classroom.list_of_people.each do |person|
-      puts "[#{person.class.name}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+    @classroom.list_of_people.each_with_index do |person, index|
+      puts "#{index}) [#{person.class.name}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
     end
   end
 
   def list_of_books
-    @classroom.list_of_books.each do |book_item|
+    @classroom.list_of_books.each_with_index do |book_item, index|
       book_title = book_item.title
       book_author = book_item.author
-      puts "Title: \"#{book_title}\", Author: #{book_author}"
+      puts "#{index}) Title: \"#{book_title}\", Author: #{book_author}"
     end
   end
 

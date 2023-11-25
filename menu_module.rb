@@ -22,7 +22,7 @@ module MenuModule
     when '4'
       create_book
     when '5'
-      # create a rental
+      create_rental
     when '6'
       # list all rentals for a given person id
     when '7'

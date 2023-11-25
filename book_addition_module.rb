@@ -12,8 +12,6 @@ module BookAdditionModule
     title, author = book_info
     new_book = Book.new(title, author, classroom)
     p 'Book created successfully'
-    puts "new_book.title #{new_book.title}"
-    puts "new_book.author #{new_book.author}"
     new_book
   end
 end
