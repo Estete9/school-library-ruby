@@ -14,6 +14,7 @@ module RentalAdditionModule
   def create_rental
     book, person, date = rental_info
     new_rental = Rental.new(date, book, person)
+    new_rental.complete_rental
     p 'Rental created successfully'
     new_rental
   end

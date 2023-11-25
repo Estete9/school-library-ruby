@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require 'securerandom'
 require_relative 'nameable'
 require_relative 'person'
 require_relative 'base_decorator'
@@ -10,6 +9,8 @@ require_relative 'trimmer_decorator'
 class Person < Nameable
   attr_reader :id
   attr_accessor :name, :age, :rentals
+
+  USED_IDS = []
 
   def initialize(age, name: 'Unknown', parent_permission: true)
     super()
@@ -44,6 +45,12 @@ class Person < Nameable
   end
 
   def generate_id
-    SecureRandom.uuid
+    loop do
+      new_id = rand(1..1_000)
+      unless USED_IDS.include?(new_id)
+        USED_IDS << new_id
+        return new_id
+      end
+    end
   end
 end

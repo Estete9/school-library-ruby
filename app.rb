@@ -42,25 +42,17 @@ class App
   end
 
   def list_of_rentals_by_id(id)
-    books_by_person_id = filter_books_by_person_id(id)
-    print_rentals(books_by_person_id)
-  end
-
-  def filter_books_by_person_id(id)
     # looks through each book
     # looks through each rental in each book
-    # filter the ones with the id
-    @classroom.list_of_books.select do |book|
-      book.rentals.select { |rental| rental.person.id == id }
+    # use select to filter the ones with the id
+    current_person = @classroom.list_of_people.find do |person|
+      person.id.to_s == id
     end
-  end
 
-  def print_rentals(books)
+    # puts "current_person #{current_person}"
     puts 'Rentals:'
-    books.each do |book|
-      book.rentals.each do |rental|
-        puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}"
-      end
+    current_person.rentals.each do |rental|
+      puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}"
     end
   end
 

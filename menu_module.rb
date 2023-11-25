@@ -37,6 +37,7 @@ module MenuModule
   end
 
   def print_menu
+    puts
     puts 'Welcome to School Library App!'
     puts 'Please choose an option by entering a number:'
     MENU_OPTIONS.each_with_index { |option, index| puts "#{index + 1} - #{option}" }
