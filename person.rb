@@ -10,8 +10,11 @@ class Person < Nameable
   attr_reader :id
   attr_accessor :name, :age, :rentals
 
+  USED_IDS = []
+
   def initialize(age, name: 'Unknown', parent_permission: true)
     super()
+    @id = generate_id
     @name = name
     @age = age
     @parent_permission = parent_permission
@@ -39,5 +42,15 @@ class Person < Nameable
     return true if @age >= 18
 
     false
+  end
+
+  def generate_id
+    loop do
+      new_id = rand(1..1_000)
+      unless USED_IDS.include?(new_id)
+        USED_IDS << new_id
+        return new_id
+      end
+    end
   end
 end
