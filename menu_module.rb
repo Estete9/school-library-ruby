@@ -25,6 +25,9 @@ module MenuModule
       create_rental
     when '6'
       # list all rentals for a given person id
+      puts 'ID of person:'
+      person_id = gets.chomp
+      list_of_rentals_by_id(person_id)
     when '7'
       # Exit
       @is_active = false
