@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Teacher < Person
   attr_reader :classroom
 

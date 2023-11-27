@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module MenuModule
   MENU_OPTIONS = [
     'List all books',

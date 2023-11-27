@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class BaseDecorator < Nameable
   def initialize(nameable)
     super()
