@@ -1,7 +1,4 @@
-# frozen_string_literal: true
-
 require_relative 'nameable'
-require_relative 'person'
 require_relative 'base_decorator'
 require_relative 'capitalize_decorator'
 require_relative 'trimmer_decorator'
@@ -10,7 +7,7 @@ class Person < Nameable
   attr_reader :id
   attr_accessor :name, :age, :rentals
 
-  USED_IDS = []
+  USED_IDS = [].freeze
 
   def initialize(age, name: 'Unknown', parent_permission: true)
     super()

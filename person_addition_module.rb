@@ -6,7 +6,7 @@ module PersonAdditionModule
     name = gets.chomp
     p 'Has parent permission? [Y/N]:'
     parent_permission_input = gets.chomp.downcase
-    parent_permission = parent_permission_input == 'y' ? true : false
+    parent_permission = parent_permission_input == 'y'
     [age, name, parent_permission]
   end
 
